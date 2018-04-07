@@ -11,7 +11,7 @@ export default class Header extends React.Component{
         <h1 id="title">#title</h1>
         <div className='Navbar'>
           <Link to='/home'><button className='Link'>Home</button></Link>
-          <Link to='/quizesList'><button className='Link'>My Quizes</button></Link>
+          <Link to='/quizzesList'><button className='Link'>My Quizzes</button></Link>
         </div>
       </div>
     );
