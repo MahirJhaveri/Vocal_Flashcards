@@ -1,16 +1,26 @@
 import React from 'react';
 
+import '../Stylesheets/Quizzes.css';
+
 export default class QuizzesList extends React.Component{
   render(){
     return(
-      <div>
-        <h1>A List of Available Quizes should appear here...</h1>
-        <ul>
-          <li>Japanese Quiz</li>
-          <li>Arabic Quiz</li>
-          <li>Hindi Quiz</li>
-          <li>English Quiz</li>
-        </ul>
+      <div className="quizzes-content">
+        <h1>Here is a List of Your Quizzes</h1>
+        <div className="col">
+          <div className="row-sm-3">
+            <button className="btn btn-lg btn-primary language-buttons">Japanese Quiz</button>
+          </div>
+          <div className="row-sm-3">
+            <button className="btn btn-lg btn-primary language-buttons">Arabic Quiz</button>
+          </div>
+          <div className="row-sm-3">
+            <button className="btn btn-lg btn-primary language-buttons">Hindi Quiz</button>
+          </div>
+          <div className="row-sm-3">
+            <button className="btn btn-lg btn-primary language-buttons">English Quiz</button>
+          </div>
+        </div>
       </div>
     );
   }
