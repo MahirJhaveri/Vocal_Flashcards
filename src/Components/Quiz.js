@@ -3,6 +3,7 @@ import QuizSidebar from './QuizSidebar.js';
 import QuizQuestion from './QuizQuestion.js';
 
 import '../Stylesheets/Quiz.css';
+import '../Voice_recognition/test_speech';
 
 export default class Quiz extends React.Component{
   constructor(props){
@@ -10,11 +11,12 @@ export default class Quiz extends React.Component{
     var quizzes = [
       {
         questions : ["What is Good Morning in French?", "What is Thank You in French?"],
-        answers : ["bonjour", "merci"]
+        answers : [ "bonjour", "merci"]
       }
     ];
     var id = props.params.id;
     console.log(id);
+
     this.state = {
       questions : quizzes[id].questions,
       answers : quizzes[id].answers,
@@ -38,10 +40,15 @@ export default class Quiz extends React.Component{
     var answers = state.answers;
 
     return(
-      <div className='Quiz'>
-        <QuizSidebar questions={questions} currentQuestion={currentQuestion} changeQuestion={this.getChangeQF.bind(this)} />
-        <h1>{currentQuestion}</h1>
-        <QuizQuestion question={questions[currentQuestion - 1]} answer={answers[currentQuestion - 1]} num={currentQuestion} />
+      <div className='quiz-container'>
+        <div className="row row-container">
+          <div className="col-sm-2 sidebar-wrapper">
+            <QuizSidebar questions={questions} currentQuestion={currentQuestion} changeQuestion={this.getChangeQF.bind(this)} />
+          </div>
+          <div className="col-sm-10 question-wrapper">
+            <QuizQuestion question={questions[currentQuestion - 1]} answer={answers[currentQuestion - 1]} num={currentQuestion} />
+          </div>
+        </div>
       </div>
     );
   }

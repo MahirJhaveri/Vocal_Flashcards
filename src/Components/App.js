@@ -11,7 +11,7 @@ export default class App extends React.Component{
     var collection = props.params.collection;
 
     return(
-      <div className='App'>
+      <div className='App' style={{height: '100%'}}>
         <Header />
         <div className='route_data'>
           {(props.location.pathname === '/') ? <Home /> :

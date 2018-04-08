@@ -10,7 +10,7 @@ import Whoops404 from './Components/Whoops404';
 
 ReactDOM.render(
   <Router history={hashHistory}>
-    <div>
+    <div style={{height: '100%'}}>
       <Route path='/' component={App}/>
       <Route path='/home' component={App}/>
       <Route path='/quizzesList' component={App}/>
