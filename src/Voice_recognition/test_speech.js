@@ -3,17 +3,26 @@ var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 const comparisons = require('./test_speech_comparison.js');
 
-exports.test_speech = function testSpeech(answer, question) {
+var phrasePara = document.querySelector('.phrase');
+var resultPara = document.querySelector('.result');
+var diagnosticPara = document.querySelector('.output');
+
+var testBtn = document.querySelector('button');
+/**
+ *  Updates textcontents of clases s "phrase" "result" "output"
+ *  with comparisons of @param question and @param answer.
+ * given a language code string @param lang
+ */
+exports.test_speech = function testSpeech(question, answer, lang) {
   testBtn.disabled = true;
   testBtn.textContent = 'Test in progress';
 
-  var idx = randomPhrase();
-  var phrase_en = questions[idx];
+  var phrase_en = question;
   // TODO SWITCH BACK TO JAP
   // var phrase = answers[idx];
-  var phrase = questions[idx];
-  console.log(phrase_en);
-  phrasePara.textContent = quest;
+  var phrase = question;
+  console.log(question);
+  phrasePara.textContent = question;
   resultPara.textContent = 'Right or wrong?';
   resultPara.style.background = 'rgba(0,0,0,0.2)';
   diagnosticPara.textContent = '...diagnostic messages';
@@ -23,9 +32,7 @@ exports.test_speech = function testSpeech(answer, question) {
   var speechRecognitionList = new SpeechGrammarList();
   speechRecognitionList.addFromString(grammar, 1);
   recognition.grammars = speechRecognitionList;
-  // TODO SWITCH BACK TO JAPANESE
-  // recognition.lang = 'ja-JP';
-  recognition.lang = 'en-US';
+  recognition.lang = lang;
   recognition.interimResults = false;
   recognition.maxAlternatives = 1;
 
