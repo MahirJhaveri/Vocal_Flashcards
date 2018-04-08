@@ -21,10 +21,10 @@ export default class QuizQuestion extends React.Component{
       <div className="QuestionContainer">
         <div className="Q">
           <h1>Question:</h1>
-          <h2>{this.state.question}</h2>
+          <h2>{this.props.question}</h2>
         </div>
         <div className="A">
-          <h1>Answer : {this.state.answer}</h1>
+          <h1>Answer : {this.props.answer}</h1>
         </div>
         <div></div>
       </div>
