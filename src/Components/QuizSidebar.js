@@ -17,15 +17,17 @@ export default class QuizSidebar extends React.Component{
     var state = this.state;
     for(var i = 0; i < state.questions.length; i++){
       q.push(
-        <button onClick={state.changeQuestion(i)}>Quiz {i}</button>
+        <div className="row-lg-3">
+          <button className="btn btn-lg btn-primary question-boxes" onClick={state.changeQuestion(i)}>Problem {i}</button>
+        </div>
       );
     }
     return <div>{q}</div>
-          }
+  }
 
   render(){
-    return(
-      <div className="sidebar">
+    return( 
+      <div className="col">
         {this.displayQuizes()}
       </div>
     );
