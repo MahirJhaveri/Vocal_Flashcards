@@ -3,7 +3,10 @@ import QuizSidebar from './QuizSidebar.js';
 import QuizQuestion from './QuizQuestion.js';
 
 import '../Stylesheets/Quiz.css';
+<<<<<<< HEAD
 //import '../Voice_recognition/test_speech';
+=======
+>>>>>>> parent of 859719cf... Merge branch 'master' of https://github.com/MahirJhaveri/Vocal_Flashcards
 
 export default class Quiz extends React.Component{
   constructor(props){
@@ -11,12 +14,11 @@ export default class Quiz extends React.Component{
     var quizzes = [
       {
         questions : ["What is Good Morning in French?", "What is Thank You in French?"],
-        answers : [ "bonjour", "merci"]
+        answers : ["bonjour", "merci"]
       }
     ];
     var id = props.params.id;
     console.log(id);
-
     this.state = {
       questions : quizzes[id].questions,
       answers : quizzes[id].answers,
