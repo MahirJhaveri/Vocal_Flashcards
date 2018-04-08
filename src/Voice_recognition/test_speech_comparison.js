@@ -1,18 +1,20 @@
-
-/* comparison */
+/**
+ * Recognized text comparison
+ * Author: Christian Roncal
+ **/
 
 /* return true if char is space */
-exports.isWhiteSpace = function isWhiteSpace(char) {
+isWhiteSpace = function isWhiteSpace(char) {
     return " \t\n".includes(char);
 }
 
 /* return true if char is punctuation */
-exports.isPunct = function isPunct(char) {
+isPunct = function isPunct(char) {
     return ";:.,?!-'\"(){}".includes(char);
 }
 
 /* strip punctuation and spaces from @param string */
-exports.compress = function compress(string) {
+compress = function compress(string) {
     return string
       .split("")
       .filter(char => !isWhiteSpace(char) && !isPunct(char))
@@ -20,7 +22,7 @@ exports.compress = function compress(string) {
 }
 
 /* checks if result, phrase are the same */
-export.compare_strings = function compare_strings(result, phrase)
+exports.compare_strings = function compare_strings(result, phrase)
 {
     var result_punctuationless = compress(result).toUpperCase();
     var phrase_punctuationless = compress(phrase).toUpperCase();
