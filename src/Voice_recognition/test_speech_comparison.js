@@ -4,17 +4,17 @@
  **/
 
 /* return true if char is space */
-isWhiteSpace = function isWhiteSpace(char) {
+function isWhiteSpace(char) {
     return " \t\n".includes(char);
 }
 
 /* return true if char is punctuation */
-isPunct = function isPunct(char) {
+function isPunct(char) {
     return ";:.,?!-'\"(){}".includes(char);
 }
 
 /* strip punctuation and spaces from @param string */
-compress = function compress(string) {
+function compress(string) {
     return string
       .split("")
       .filter(char => !isWhiteSpace(char) && !isPunct(char))

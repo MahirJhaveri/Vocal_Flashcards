@@ -1,6 +1,6 @@
-var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
-var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
-var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+var SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarList;
+var SpeechRecognitionEvent = window.SpeechRecognitionEvent || window.webkitSpeechRecognitionEvent;
 const comparisons = require('./test_speech_comparison.js');
 
 var phrasePara = document.querySelector('.phrase');
@@ -13,7 +13,7 @@ var testBtn = document.querySelector('button');
  *  with comparisons of @param question and @param answer.
  * given a language code string @param lang
  */
-exports.test_speech = function testSpeech(question, answer, lang) {
+function testSpeech(question, answer, lang) {
   testBtn.disabled = true;
   testBtn.textContent = 'Test in progress';
 
@@ -113,5 +113,7 @@ exports.test_speech = function testSpeech(question, answer, lang) {
       console.log('SpeechRecognition.onstart');
   }
 } //end testSpeech
+
+exports.test_speech = testSpeech;
 
 testBtn.addEventListener('click', testSpeech);
