@@ -3,16 +3,9 @@ var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
 var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
 const comparisons = require('./test_speech_comparison.js');
 
-exports.test_speech = function testSpeech(answer, questione) {
+exports.test_speech = function testSpeech(answer, question) {
   testBtn.disabled = true;
   testBtn.textContent = 'Test in progress';
-
-  function randomPhrase() {
-      //TODO CHANGE BACK TO JP
-    var number = Math.floor(Math.random() * answers.length);
-    var number = Math.floor(Math.random() * questions.length);
-    return number;
-  }
 
   var idx = randomPhrase();
   var phrase_en = questions[idx];
@@ -20,7 +13,7 @@ exports.test_speech = function testSpeech(answer, questione) {
   // var phrase = answers[idx];
   var phrase = questions[idx];
   console.log(phrase_en);
-  phrasePara.textContent = phrase_en;
+  phrasePara.textContent = quest;
   resultPara.textContent = 'Right or wrong?';
   resultPara.style.background = 'rgba(0,0,0,0.2)';
   diagnosticPara.textContent = '...diagnostic messages';
