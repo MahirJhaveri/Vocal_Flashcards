@@ -38,10 +38,15 @@ export default class Quiz extends React.Component{
     var answers = state.answers;
 
     return(
-      <div className='Quiz'>
-        <QuizSidebar questions={questions} currentQuestion={currentQuestion} changeQuestion={this.getChangeQF.bind(this)} />
-        <h1>{currentQuestion}</h1>
-        <QuizQuestion question={questions[currentQuestion - 1]} answer={answers[currentQuestion - 1]} num={currentQuestion} />
+      <div className='quiz-container'>
+        <div className="row row-container">
+          <div className="col-sm-2 sidebar-wrapper">
+            <QuizSidebar questions={questions} currentQuestion={currentQuestion} changeQuestion={this.getChangeQF.bind(this)} />
+          </div>
+          <div className="col-sm-10 question-wrapper">
+            <QuizQuestion question={questions[currentQuestion - 1]} answer={answers[currentQuestion - 1]} num={currentQuestion} />
+          </div>
+        </div>
       </div>
     );
   }
