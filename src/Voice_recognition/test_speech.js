@@ -1,9 +1,9 @@
 if (!('webkitSpeechRecognition' in window)) {
-    upgrade();
+    window.upgrade();
 } else {
-    var SpeechRecognition = new webkitSpeechRecognition();
-    var SpeechGrammarList = new webkitSpeechGrammarList();
-    var SpeechRecognitionEvent = new webkitSpeechRecognitionEvent();
+    var SpeechRecognition = new window.webkitSpeechRecognition();
+    var SpeechGrammarList = new window.webkitSpeechGrammarList();
+    var SpeechRecognitionEvent = new window.webkitSpeechRecognitionEvent();
     const comparisons = require('./test_speech_comparison.js');
 
     var phrasePara = document.querySelector('.phrase');
@@ -117,5 +117,5 @@ if (!('webkitSpeechRecognition' in window)) {
     }
     } //end testSpeech
 
-    testBtn.addEventListener('click', testSpeech);
+    testBtn.addEventListener('click', test_speech);
 }
