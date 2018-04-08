@@ -8,10 +8,12 @@ export default class Header extends React.Component{
   render(){
     return(
       <div className='Header'>
-        <h1 id="title">#title</h1>
         <div className='Navbar'>
-          <Link to='/home'><button className='Link'>Home</button></Link>
+          <a href="index.html">
+            <img id ="banner" src="./images/VocaLearn_Banner.png"></img>
+          </a>
           <Link to='/quizzesList'><button className='Link'>My Quizzes</button></Link>
+          <Link to='/home'><button className='Link'>Log In</button></Link>
         </div>
       </div>
     );

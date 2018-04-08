@@ -2,7 +2,7 @@
   position: sticky;
   left: 0;
   top: 0;
-  background: rgb(155, 48, 9);
+  background: rgb(205, 205, 205);
   width: 100%;
   display: run-in;
   padding-left: 0px;
@@ -12,27 +12,27 @@
 
 .Link{
   display: inline-block;
-  background-color: white; /* Green */
+  background-color: rgb(205, 205, 205);
   border: none;
-  color: white;
+  color: none;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 25px;
   margin-right: 20px;
-  margin-left: 20px;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  margin-left: 40px;
+  margin-top: 15px;
+  margin-bottom: 5px;
   font-family: Montserrat;
-  color: turquoise;
+  color: olive;
   width: 200px;
   box-shadow: 0 0 21px 0px rgba(0,0,0,0.3);
 }
 
 .Link:hover{
-  background-color: turquoise;
-  color: white;
+  background-color: white;
+  color: olive;
 }
 
 #title{
