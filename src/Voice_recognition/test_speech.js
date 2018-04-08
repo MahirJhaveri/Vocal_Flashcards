@@ -9,7 +9,7 @@ var diagnosticPara = document.querySelector('.output');
 
 var testBtn = document.querySelector('button');
 /**
- *  Updates textcontents of clases "phrase" "result" "output"
+ *  Updates textcontents of clases s "phrase" "result" "output"
  *  with comparisons of @param question and @param answer.
  * given a language code string @param lang
  */
