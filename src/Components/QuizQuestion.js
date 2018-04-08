@@ -18,6 +18,7 @@ export default class QuizQuestion extends React.Component{
     var num = state.num;
 
     return(
+<<<<<<< HEAD
       <div className="QuestionContainer">
         <div className="Q">
           <h1>Question:</h1>
@@ -34,6 +35,14 @@ export default class QuizQuestion extends React.Component{
                 <h1>Question: {this.state.num}</h1>
                 <h2>{this.state.question}</h2>
               </div>
+=======
+      <div className="question-container">
+        <div className="col">
+          <div className="row-sm-8">
+            <div className="Q">
+              <h1>Question: {this.state.num}</h1>
+              <h2>{this.state.question}</h2>
+>>>>>>> a2813dcbe8ebf99c483215c4bb4cea6a57bb2943
             </div>
             <div className="row-sm-4">
               <div className="A">
@@ -45,6 +54,10 @@ export default class QuizQuestion extends React.Component{
 
         </div>
         </div>
+<<<<<<< HEAD
+=======
+      </div>
+>>>>>>> a2813dcbe8ebf99c483215c4bb4cea6a57bb2943
     );
   }
 };
